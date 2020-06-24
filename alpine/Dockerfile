@@ -8,6 +8,9 @@ FROM ${RESTY_IMAGE_BASE}:${RESTY_IMAGE_TAG}
 
 LABEL maintainer="Evan Wies <evan@neomantra.net>"
 
+RUN wget https://github.com/nbs-system/naxsi/archive/0.55.3.tar.gz && tar xzvf 0.55.3.tar.gz -C /usr/local/ && rm xzvf 0.55.3.tar.gz
+
+
 # Docker Build Arguments
 ARG RESTY_IMAGE_BASE="alpine"
 ARG RESTY_IMAGE_TAG="3.11"
@@ -35,7 +38,7 @@ ARG RESTY_CONFIG_OPTIONS="\
     --with-http_slice_module \
     --with-http_ssl_module \
     --with-http_stub_status_module \
-    --with-http_sub_module \
+    --with-http_sub_module --add-module=/usr/local/naxsi-0.55.3/naxsi_src/ \
     --with-http_v2_module \
     --with-http_xslt_module=dynamic \
     --with-ipv6 \
