@@ -8,7 +8,7 @@ FROM ${RESTY_IMAGE_BASE}:${RESTY_IMAGE_TAG}
 
 LABEL maintainer="Evan Wies <evan@neomantra.net>"
 
-RUN wget https://github.com/nbs-system/naxsi/archive/0.55.3.tar.gz && tar xzvf 0.55.3.tar.gz -C /usr/local/ && rm xzvf 0.55.3.tar.gz
+RUN wget https://github.com/nbs-system/naxsi/archive/0.55.3.tar.gz && tar xzvf 0.55.3.tar.gz -C /usr/local/ && rm 0.55.3.tar.gz
 
 
 # Docker Build Arguments
